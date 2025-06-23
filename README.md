@@ -43,7 +43,11 @@ bun start
 # running in debug 
 DEBUG=1 bun start
 ```
-
+## FAQ
+- Is this allowed by UploadThing
+**yes**, it is an allowed, the maintainers have consented
+- What clients do this support
+Just the **js** one is confirmed to work, if you want your client to work make a PR or github issue
 ## RoadMap
 - LTS version for multiple ut versions (maintainers wanted)
 - Docker support - coming soon
