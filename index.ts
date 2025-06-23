@@ -38,7 +38,10 @@ if (!API_SECRET || !BASE_URL) {
 }
 
 app.use("*", cors());
-app.use("*", HonoLogger());
+
+if (Bun.env.DEBUG !== "1") {
+  app.use("*", HonoLogger());
+}
 
 app.use("*", requestLoggerMiddleware);
 
