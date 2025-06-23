@@ -1,4 +1,4 @@
-# utserver - The **only** way to self host **uploadthing**
+# utServer - The **unoffical** way to self host **uploadthing**, lightning fast
 
 Running out of storage in uploadthing? Don't want to pay for more storage for testing? Then this is the perfect tool for you. All you need is bun and you have a quick uploadthing server, that works with the official client - out of the box, almost completely compat. We are fully compatiable with the openAPi spec. 
 
