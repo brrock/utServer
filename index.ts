@@ -379,13 +379,11 @@ app.post(
     const body = c.req.valid("json");
     logger.log("Received route metadata for fileKeys:", body.fileKeys);
 
-    // Update the file records in the database with the new info
     const { count } = await prisma.file.updateMany({
       where: {
         key: { in: body.fileKeys },
       },
       data: {
-        // Stringify the metadata object for storage in the text field
         metadata: body.metadata ? JSON.stringify(body.metadata) : null,
         callbackUrl: body.callbackUrl,
         callbackSlug: body.callbackSlug,
@@ -394,7 +392,7 @@ app.post(
 
     logger.debug(`Updated ${count} file(s) with callback metadata.`);
 
-    // Acknowledge receipt with a success response
+
     return c.json({ ok: true });
   },
 );
