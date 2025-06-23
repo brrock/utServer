@@ -1,0 +1,47 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./db.db"
+}
+
+model File {
+  id                 String   @id @default(cuid())
+  customId           String?  @unique @map("custom_id")
+  key                String   @unique
+  name               String
+  size               Int
+  type               String
+  status             FileStatus @default(UPLOADING)
+  acl                FileAcl    @default(PRIVATE)
+  contentDisposition ContentDisposition? @default(INLINE) @map("content_disposition")
+  metadata           String?  // JSON string
+  callbackUrl        String?  @map("callback_url")
+  callbackSlug       String?  @map("callback_slug")
+  fileHash           String?  @map("file_hash")
+  uploadedAt         DateTime? @map("uploaded_at")
+  createdAt          DateTime @default(now()) @map("created_at")
+  updatedAt          DateTime @updatedAt @map("updated_at")
+
+  @@map("files")
+}
+
+enum FileStatus {
+  DELETION_PENDING @map("Deletion Pending")
+  FAILED          @map("Failed")
+  UPLOADED        @map("Uploaded")
+  UPLOADING       @map("Uploading")
+}
+
+enum FileAcl {
+  PUBLIC_READ @map("public-read")
+  PRIVATE     @map("private")
+}
+
+enum ContentDisposition {
+  INLINE     @map("inline")
+  ATTACHMENT @map("attachment")
+}

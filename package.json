@@ -1,0 +1,27 @@
+{
+  "name": "utserver",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run --hot index.ts",
+    "start": "bun run index.ts",
+    "db:push": "prisma db push",
+    "postinstall": "prisma generate"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prisma": "6.10.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "0.7.0",
+    "@prisma/client": "^6.10.1",
+    "consola": "3.4.2",
+    "hono": "4.8.2",
+    "nanoid": "5.1.5",
+    "zod": "3.25.67"
+  }
+}
