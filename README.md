@@ -50,7 +50,6 @@ DEBUG=1 bun start
 Just the **js** one is confirmed to work, if you want your client to work make a PR or github issue
 ## RoadMap
 - LTS version for multiple ut versions (maintainers wanted)
-- Docker support - coming soon
 - UploadThing tests
 - S3 storage adapter 
 - Vercel blob storage adapter

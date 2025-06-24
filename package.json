@@ -7,6 +7,11 @@
     "dev": "bun run --hot index.ts",
     "start": "bun run index.ts",
     "db:push": "prisma db push",
+    "docker-compose:up": "docker-compose  up -d --build",
+    "docker-compose:down": "docker-compose  down",
+    "docker-compose:logs": "docker-compose  logs -f",
+    "docker-compose:ps": "docker-compose  ps",
+    "docker-compose:update": "git pull && docker-compose  up -d --build",
     "postinstall": "prisma generate"
   },
   "devDependencies": {
